@@ -1,0 +1,23 @@
+
+<div data-ng-controller="loginController" class="col-md-4 container-fluid">
+  <form class=" jumbotron form-well form-control" >
+    <h2 class="text-center">LOGIN</h2>
+
+    <div class="form-group">
+      <input type="text" class="form-control" data-ng-model="pseudo" placeholder="Enter pseudo">
+      </input>
+    </div>
+    <div class="form-group">
+      <input type="password" class="form-control" data-ng-model="mdp"  placeholder="Enter mot de passe">
+      </input>
+    </div>
+    <div class="form-group">
+      <button ng-click="login()" type="submit" class="form-control btn-primary btn-lg" >Login</button>
+    </div>
+    <div class="form-group">
+      <a href="#/register" type="submit" class="form-control text-center btn-primary btn-lg">Register</a>
+    </div>
+  </form>
+  <span data-ng-model="res1" >{{ res1}}</span>
+
+</div>

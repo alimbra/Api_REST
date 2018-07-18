@@ -1,0 +1,68 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<div>
+this is home
+</div>
+<div class="fos_user_user_show">
+    <p>{{ 'profile.show.username'|trans }}: {{ user.username }}</p>
+    <p>{{ 'profile.show.email'|trans }}: {{ user.email }}</p>
+</div>
+
+<div class="fos_user_user_show">
+    <p>Les autres marcipulamis :</p>
+    <table class="table">
+    <tr>
+     <th scope="col"></th>
+     <th scope="col">Pseudo</th>
+     <th scope="col">Age</th>
+     <th scope="col">Race</th>
+     <th scope="col">Famille</th>
+     <th scope="col">nourriture</th>
+     <th scope="col">Action</th>
+
+   </tr>
+   {% for ami in lesMarcipilamis
+   %}
+     <tr>
+      <td scope="col"></td>
+      <th scope="col">{{ ami.username }}</th>
+      <td scope="col">{{ ami.age }}</td>
+      <td scope="col">{{ ami.race  }}</td>
+      <td scope="col">{{ ami.famille  }}</td>
+      <td scope="col">{{ ami.nourriture }}</td>
+      <td scope="col"><a href="{{ path('ajouterUnAmi', {'idAmi': ami.id} ) }}" class="btn-primary" >ajouterAmi</a></td>
+
+
+     </tr>
+    {% endfor %}
+    </table>
+</div>
+<div>
+
+  <p>Mes amis  :</p>
+  <table class="table">
+  <tr>
+   <th scope="col"></th>
+   <th scope="col">Pseudo</th>
+   <th scope="col">Age</th>
+   <th scope="col">Race</th>
+   <th scope="col">Famille</th>
+   <th scope="col">nourriture</th>
+   <th scope="col">Action</th>
+
+  </tr>
+  {% for ami in amis %}
+   <tr>
+    <td scope="col"></td>
+    <th scope="col">{{ ami.username }}</th>
+    <td scope="col">{{ ami.age }}</td>
+    <td scope="col">{{ ami.race  }}</td>
+    <td scope="col">{{ ami.famille  }}</td>
+    <td scope="col">{{ ami.nourriture }}</td>
+    <td scope="col">
+      <a href="{{ path('supprimerUnAmi', {'idAmi': ami.id} ) }}" class="btn-primary" >supprimerAmi</a>
+    </td>
+   </tr>
+  {% endfor %}
+  </table>
+</div>

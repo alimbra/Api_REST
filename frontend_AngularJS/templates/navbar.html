@@ -1,0 +1,23 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+  <a class="navbar-brand" href="#/">HOME</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapse" aria-controls="#navbarResponsive"  aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#/">Mes amis <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="#/profile">Mon profil</a>
+      </li>
+      <li class="nav-item active nav-link text-uppercase font-italic" data-ng-model="username">connected as {{ username }}
+      </li>
+      <div data-ng-controller="logOutController">
+        <li class="nav-item active" >
+          <a class="nav-link"  ng-click="logout()" >Se deconnecter</a>           
+        </li>
+      </div>
+    </ul>
+  </div>
+</nav>

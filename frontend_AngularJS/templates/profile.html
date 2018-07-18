@@ -1,0 +1,23 @@
+
+<div class="container-fluid col-sm-12" data-ng-controller="profileController">
+	<div ng-include="'templates/navbar.html'"></div>
+	<div class="text-center container-fluid " data-ng-model="userProfile">
+		<form class=" text-center row jumbotron form form-well form-striped col-sm-5 offset-md-3">
+			<h3><p class="text-center"><strong>MON PROFIL</strong></p></h3>
+			<input type="text" class="text-center form-control form-group" data-ng-model="userProfile.username"></input>
+			<input type="text" class="text-center form-control form-group" data-ng-model="userProfile.age"></input>
+			
+			<input type="text" class="form-control text-center form-group" data-ng-model="userProfile.famille"></input>
+			
+			<input type="text" class="form-control text-center form-group" data-ng-model="userProfile.race"></input>
+			
+			<input type="text" class="form-control text-center form-group" data-ng-model="userProfile.nourriture"></input>
+
+			<button data-ng-controller="modifierProfileController"  ng-click="validerModif()" 
+			class="form-control form-group btn btn-lg btn-success" type="submit">Valider
+			</button>
+		</form>
+	</div>
+</div>
+
+

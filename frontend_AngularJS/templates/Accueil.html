@@ -1,0 +1,52 @@
+
+
+<div class="container-fluid col-sm-12 col-md-10 col-lg-10">
+
+  <div data-ng-controller="listeController" class="container-fluid offset-sm-1" >
+  <div ng-include="'templates/navbar.html'"></div>
+  
+  <h3><strong>Les autres marcipulamis</strong></h3>
+
+  
+  <input class="form-control col-lg-4 col-md-4 col-sm-3" type="search" data-ng-model="pseudo" placeholder="Search others by Pseudo/age/race/famille/nourriture" aria-label="Search"></input>
+
+  <br/>
+  <div class="row" >
+    <div class="col-sm-4 col-md-4 col-lg-4" data-ng-repeat="autre in users|filter:pseudo">
+      <div class="card text-center jumbotron" >
+        <div class="card-body ">
+          <h5 class="card-title ">USERNAME :<strong>{{ autre.username }}</strong></h5>
+          <p class="card-text">AGE :<strong>{{ autre.age }}</strong></p>
+          <p class="card-text">FAMILLE :<strong>{{ autre.famille }}</strong></p>
+          <p class="card-text">NOURRITURE :<strong>{{ autre.nourriture }}</strong></p>
+          <button data-ng-controller="ajouterAmiController" ng-click="ajouterAmi()" type="submit" class="text-justify text-center card-footer col-sm-12 col-md-12 col-lg-12 btn bg-success">ajouter comme Ami
+          </button>  
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <h3><strong>Mes amis</strong></h3>
+
+  <input class="form-control col-sm-3" type="search" data-ng-model="pseudo1" placeholder="Search my friends by Pseudo/age/race/famille/nourriture" aria-label="Search"></input>
+  
+  <br/>
+  <div class="row">
+    <div data-ng-repeat="ami in amis|filter:pseudo1" class="col-sm-4">
+      <div class="card text-center jumbotron" >
+        <div class="card-body">
+          <h5 class="card-title ">USERNAME :<strong>{{ ami.username }}</strong></h5>
+          <p class="card-text">AGE :<strong>{{ ami.age }}</strong></p>
+          <p class="card-text">FAMILLE :<strong>{{ ami.famille }}</strong></p>
+          <p class="card-text">NOURRITURE :<strong>{{ ami.nourriture }}</strong></p> 
+          <button data-ng-controller="supprimerAmiController" ng-click="supprimerAmi()" type="submit" class="card-footer btn bg-warning">supprimerAmi
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+    <span data-ng-model="res2" >{{ res2}}</span>
+
+  </div>
+</div>

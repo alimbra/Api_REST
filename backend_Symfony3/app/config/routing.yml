@@ -1,0 +1,34 @@
+
+fos_user:
+    resource: "routing/all.xml"
+app:
+    path:     /Accueil
+    controller: AppBundle\Controller\AccueilController::indexAction
+    methods:  POST
+
+amis:
+    path:     /users
+    controller: AppBundle\Controller\AccueilController::amisAction
+    methods:  POST
+ajouterUnAmi:
+    path:     /ajouterAmi/{idAmi}
+    controller: AppBundle\Controller\AccueilController::ajouterAmiAction
+    methods:  GET
+
+supprimerUnAmi:
+    path:     /supprimerAmi/{idAmi}
+    controller: AppBundle\Controller\AccueilController::supprimerAmiAction
+    methods:  GET
+monprofil:
+    path:     /myprofile
+    controller: AppBundle\Controller\AccueilController:showAction
+    methods: GET
+
+modifprofile:
+    path:     /modifprofile
+    controller: AppBundle\Controller\AccueilController:updateProfileAction
+    methods: POST
+createUser:
+    path:     /createUser
+    controller: AppBundle\Controller\AccueilController:createAccountAction
+    methods: POST

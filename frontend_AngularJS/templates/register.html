@@ -1,0 +1,62 @@
+
+<div data-ng-controller="loginController" class="col-md-4 container-fluid">
+  <form id="formulaire" class="form-well jumbotron form-control" >
+    <h2 class="text-center">REGISTER</h2>
+    <div  class="form-group">
+      <input ng-class="form-control" ng-keyup="insererNV('#email')" 
+      type="email" id="email" class="form-control" 
+      data-ng-model="nvlUser.email" placeholder="Enter email">
+      </input>
+      <div class="invalid-feedback">veuillez inserer un email valide</div>
+    </div>
+    <div  class="form-group">
+      <input type="text" id="pseudo" ng-keyup="insererNV('#pseudo')"  class="form-control" data-ng-model="nvlUser.pseudo" placeholder="Enter pseudo">
+      </input>
+      <div class="invalid-feedback">veuillez inserer un pseudo!</div>
+    </div>
+    <div class="form-group">
+      <input type="number" id="age" ng-keyup="insererNV('#age')"  class="form-control" data-ng-model="nvlUser.age" placeholder="Enter age" ></input>
+      <div class="invalid-feedback">veuillez inserer un entier valide!</div>
+
+    </div>
+    <div class="form-group">
+        <input type="password" id="password" ng-keyup="insererNV('#password')"  class="form-control" data-ng-model="nvlUser.mdp"  placeholder="Enter mot de passe">
+        <div class="invalid-feedback">veuillez inserer un mot de passe valide! </div>
+
+        </input>
+    </div>
+    <div class="form-group">
+        <input type="password" id="confpassword" ng-keyup="insererNV('#confpassword')"  class="form-control" data-ng-model="nvlUser.mdpconf"  placeholder="Confirmer mot de passe"></input>
+        <div class="invalid-feedback">veuillez confirmer votre mot de passe! </div>
+
+    </div>
+    <div class="form-group">
+      <input type="text" id="race" class="form-control" ng-keyup="insererNV('#race')"  data-ng-model="nvlUser.race" placeholder="race"></input>
+      <div class="invalid-feedback">veuillez renseigner une race valide! </div>
+
+    </div>
+
+    <div class="form-group">
+      <input type="text" id="famille" class="form-control" ng-keyup="insererNV('#famille')"  data-ng-model="nvlUser.famille" placeholder="famille"></input>
+      <div class="invalid-feedback">veuillez renseigner une famille valide! </div>
+    </div>
+
+    <div class="form-group">
+      <input type="text" id="nourriture" ng-keyup="insererNV('#nourriture')" class="form-control" data-ng-model="nvlUser.nourriture"  placeholder="nourriture"></input>
+      <div class="invalid-feedback">veuillez renseigner la nourriture! </div>
+
+    </div>
+
+    <div class="form-group">
+      <button ng-click="register()" type="submit" class="form-control btn-primary btn-lg">Creation compte</button>
+    </div>  
+    <div class="form-group">
+      <a href="#/login" type="submit" class="form-control text-center btn-primary btn-lg" >Login</a>
+    </div>
+
+  <div class="alert alert-success" id="message" role="alert" >
+   accout created! you can login
+  </div>
+  </form>
+      <span data-ng-model="res1" >{{ res1}}</span>
+</div>
